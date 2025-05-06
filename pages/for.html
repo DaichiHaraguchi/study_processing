@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ループ</title>
-    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/for.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="icon" href="/study_processing/fig/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/study_processing/fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/study_processing/css/for.css">
+    <link rel="stylesheet" href="/study_processing/css/styles.css">
+    <link rel="stylesheet" href="/study_processing/css/header.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
     <script>
         const pageTitle = "ループ";  // ← ページごとに変える！
 
-        fetch('../components/header.html')
+        fetch('/study_processing/components/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -38,7 +38,7 @@
         <p>
             下図にプログラムとフローチャートを示しています。下図は<code>i</code>が<code>5</code>より小さい限り<code>i</code>中身を繰り返し出力するコードです。
             実際にどのようにfor文が動いているのかは「視覚的に見てみよう」を確認してください。
-            <img src="../fig/for_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
+            <img src="/study_processing/fig/for_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
         </p>
         
         <h1>視覚的に見てみよう</h1>
@@ -71,10 +71,10 @@
         <button class="button" onclick="startAnimation()">実行</button>
         <!-- <button class="button" onclick="startAnimation()">実行</button> -->
 
-        <script src="../js/for.js" defer></script>  <!-- `defer` を追加 -->
+        <script src="/study_processing/js/for.js" defer></script>  <!-- `defer` を追加 -->
         <div class="animation-container">
             <p><b>アニメーション</b></p>
-            <img id="image" src="../fig/for/0.svg" alt="画像"  style="height: 90%; max-height: 900px;">
+            <img id="image" src="/study_processing/fig/for/0.svg" alt="画像"  style="height: 90%; max-height: 900px;">
         </div>
         
         
@@ -82,7 +82,7 @@
     <div id="footer-placeholder"></div>
     <script>
         // フッター用
-        fetch('../components/footer.html')
+        fetch('/study_processing/components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

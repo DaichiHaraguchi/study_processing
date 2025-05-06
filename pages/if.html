@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>条件分岐</title>
-    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/if.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="icon" href="/study_processing/fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/study_processing/css/if.css">
+    <link rel="stylesheet" href="/study_processing/css/styles.css">
+    <link rel="stylesheet" href="/study_processing/css/header.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
     <script>
         const pageTitle = "条件分岐";  // ← ページごとに変える！
 
-        fetch('../components/header.html')
+        fetch('/study_processing/components/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -53,7 +53,7 @@
             下図にプログラムとフローチャートを示しています。下図は<code>x</code>に代入された値が5より大きいかどうかを判定するプログラムです。
             等しいことを示すためにはイコールを２つ連続で書いて<code>x==5</code>のように表現します。また等しくない場合は<code>x!=5</code>と表現します。
             大小比較では&lt;, &gt;が使用されます。もし、大小比較にイコールが含まれる場合は&lt;=, &gt;=が使用されます。
-            <img src="../fig/if_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
+            <img src="/study_processing/fig/if_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
         </p>
         
         <h1>視覚的に見てみよう</h1>
@@ -105,10 +105,10 @@
         <button class="button" onclick="startAnimation()">実行</button>
         <!-- <button class="button" onclick="startAnimation()">実行</button> -->
 
-        <script src="../js/if.js" defer></script>  <!-- `defer` を追加 -->
+        <script src="/study_processing/js/if.js" defer></script>  <!-- `defer` を追加 -->
         <div class="animation-container">
             <p><b>アニメーション</b></p>
-            <img id="image" src="../fig/if/0.svg" alt="画像"  style="width: 80%; max-width: 600px;">
+            <img id="image" src="/study_processing/fig/if/0.svg" alt="画像"  style="width: 80%; max-width: 600px;">
         </div>
         
         
@@ -116,7 +116,7 @@
     <div id="footer-placeholder"></div>
     <script>
         // フッター用
-        fetch('../components/footer.html')
+        fetch('/study_processing/components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

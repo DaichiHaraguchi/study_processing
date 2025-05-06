@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>はじめてのプログラミング</title>
-    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/study_processing/fig/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="/study_processing/css/header.css">
 </head>
 <body>
     <!-- <div class="header">
@@ -20,7 +20,7 @@
     <script>
         const pageTitle = "はじめてのプログラミング";  // ← ページごとに変える！
         const pageSubTitle = "~ Processing に触れてみよう ~"
-        fetch('../components/header.html')
+        fetch('/study_processing/components/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -107,7 +107,7 @@
     <div id="footer-placeholder"></div>
     <script>
         // フッター用
-        fetch('../components/footer.html')
+        fetch('/study_processing/components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

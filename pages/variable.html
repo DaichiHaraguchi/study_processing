@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>変数</title>
-    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/variable.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="icon" href="/study_processing/fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/study_processing/css/variable.css">
+    <link rel="stylesheet" href="/study_processing/css/styles.css">
+    <link rel="stylesheet" href="/study_processing/css/header.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
     <script>
         const pageTitle = "変数";  // ← ページごとに変える！
-        fetch('../components/header.html')
+        fetch('/study_processing/components/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -28,7 +28,7 @@
             箱のようなものと考えるとわかりやすいです。例えば、変数<code>x</code>に<code>5</code>を入れる（「代入」と呼ぶ）
             とき、プログラミングでは <code>x=5</code> のように記述します。
             <code>x</code>という箱に<code>5</code>が入れられるイメージです（下図のイメージ）。
-            <img src="../fig/variable_eg.svg" alt="variable" style="width: 20%; max-width: 600px; border-radius: 10px;">
+            <img src="/study_processing/fig/variable_eg.svg" alt="variable" style="width: 20%; max-width: 600px; border-radius: 10px;">
         </p>
         <h1>型とは？</h1>
         <p>
@@ -98,16 +98,16 @@
     
         <div class="animation-container">
             <p><b>アニメーション</b></p>
-            <img src="../fig/hako.svg" alt="変数の箱" width="180">
+            <img src="/study_processing/fig/hako.svg" alt="変数の箱" width="180">
             <div class="variable-value" id="variableValue">5</div>
             <div class="new-variable-value" id="newvariableValue">10</div>
         </div>
-        <script src="../js/variable.js" defer></script>  <!-- `defer` を追加 -->
+        <script src="/study_processing/js/variable.js" defer></script>  <!-- `defer` を追加 -->
     </div>
     <div id="footer-placeholder"></div>
     <script>
         // フッター用
-        fetch('../components/footer.html')
+        fetch('/study_processing/components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
