@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/if.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "条件分岐";  // ← ページごとに変える！
+
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+    <div class="content">
+        <h1>条件分岐</h1>
+        <p>
+            プログラムではifを用いて、条件分岐、つまり、条件を指定して実行するプログラムの制御ができます。
+            プログラムでは以下のような書き方をします。
+        </p>
+            <pre><code>
+                if(条件式){
+                    条件式がTrueの時に実行するプログラム;
+                }else{
+                    条件式がFalseの時に実行するプログラム;
+                }
+            </code></pre>
+        <p>
+            条件式がTrueになるとき、ifの{}内に記述されたプログラムが実行されます。
+            Falseの場合はelseの{}内に記述されたプログラムが実行されます。 
+            なお、複数の条件を使って条件分岐を行うときはifとelseの間に、else if(条件式){実行プログラム}を書くことで、
+            さらに条件分岐することができます。
+        </p>
+            <pre><code>
+                if(条件式1){
+                    条件式1がTrueの時に実行するプログラム;
+                }else if(条件式2){
+                    条件式1がFalseかつ条件式2がTrueの時に実行するプログラム;
+                }else{
+                    条件式1,2が共にFalseの時に実行するプログラム;
+                }
+            </code></pre>
+        <p>
+            下図にプログラムとフローチャートを示しています。下図は<code>x</code>に代入された値が5より大きいかどうかを判定するプログラムです。
+            等しいことを示すためにはイコールを２つ連続で書いて<code>x==5</code>のように表現します。また等しくない場合は<code>x!=5</code>と表現します。
+            大小比較では&lt;, &gt;が使用されます。もし、大小比較にイコールが含まれる場合は&lt;=, &gt;=が使用されます。
+            <img src="../fig/if_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
+        </p>
+        
+        <h1>視覚的に見てみよう</h1>
+        <p>
+            実行ボタンを押すと、コードの動作と図解アニメーションを確認できます。
+            なお、ここでは<code>random(10)</code>が使われています。
+            <code>random(10)</code>では0~10の数値をランダムに取得します。
+            このように、<code>random(最大値)</code>で0~最大値の小数をランダムに取得できます。
+            なお、random(最小値,最大値)と２つの変数を入れることで、最小値〜最大値の間の値をランダムに取得できます。
+            先頭に(int)をつけることで整数を取得できます。
+        </p>
+        <!-- 2つのコンソール -->
+        <div class="console-container">
+            <!-- プログラムコンソール -->
+            <div class="console-box">
+                <div class="console-title">プログラム</div>
+                <div class="console" id="programConsole">
+                    <div id="code1"> int x = (int)random(10);</div>
+                    <div id="code2"> println("x="+x);</div>
+                    <div id="if-statement">
+                        <span class="keyword">if</span> (x>5) { <br>
+                        &nbsp;&nbsp;println("xは5より大きいです");<br>
+                        }
+                    </div>
+        
+                    <div id="else-if-statement">
+                        <span class="keyword">else if</span> (x==5) { <br>
+                        &nbsp;&nbsp;println("xは5です");<br>
+                        }
+                    </div>
+        
+                    <div id="else-statement">
+                        <span class="keyword">else</span> { <br>
+                        &nbsp;&nbsp;println("xは5より小さいです");<br>
+                        }
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 出力コンソール -->
+            <div class="console-box">
+                <div class="console-title">結果の出力</div>
+                <div class="console" id="outputConsole">
+                    <br>
+                </div>
+            </div>
+        </div>
+    
+        <button class="button" onclick="startAnimation()">実行</button>
+        <!-- <button class="button" onclick="startAnimation()">実行</button> -->
+
+        <script src="../js/if.js" defer></script>  <!-- `defer` を追加 -->
+        <div class="animation-container">
+            <p><b>アニメーション</b></p>
+            <img id="image" src="../fig/if/0.svg" alt="画像"  style="width: 80%; max-width: 600px;">
+        </div>
+        
+        
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.61 54.42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #094;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #231815;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #fff100;
+      }
+
+      .cls-3, .cls-5, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-7 {
+        stroke-width: 2px;
+      }
+
+      .cls-4, .cls-7 {
+        fill: none;
+      }
+
+      .cls-5 {
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g>
+      <polygon class="cls-5" points="49.54 45.6 83.53 45.6 108.53 24.21 74.53 24.21 49.54 45.6"/>
+      <rect class="cls-3" x="9.57" y="45.22" width="73.31" height="7.93"/>
+      <polygon class="cls-3" points="82.88 45.6 9.57 45.6 1.21 1 74.51 1 82.88 45.6"/>
+      <g>
+        <polygon class="cls-2" points="38.32 17.14 39.05 39.58 27.93 30.17 27.19 7.73 38.32 17.14"/>
+        <polygon class="cls-1" points="38.32 17.14 39.05 39.58 49.54 29.47 48.81 7.03 38.32 17.14"/>
+      </g>
+      <path class="cls-4" d="M110.28,30.17l-27.66,23.87,27.66-23.87Z"/>
+      <path class="cls-7" d="M82.88,46.23v5.92-5.92Z"/>
+      <polygon class="cls-6" points="82.88 53.16 110.01 30.01 110.01 24.28 82.88 47.42 82.88 53.16"/>
+    </g>
+  </g>
+</svg>

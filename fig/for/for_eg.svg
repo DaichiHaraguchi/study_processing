@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.92 352.69">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3, .cls-2 {
+        stroke: #231815;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #231815;
+      }
+
+      .cls-7 {
+        fill: #fff;
+        font-family: Courier, Courier;
+        font-size: 10px;
+      }
+
+      .cls-8 {
+        letter-spacing: .25em;
+      }
+
+      .cls-5 {
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, 'Kozuka Gothic Pr6N';
+      }
+
+      .cls-5, .cls-6 {
+        font-size: 12px;
+      }
+
+      .cls-6 {
+        font-family: KozGoPro-Regular-83pv-RKSJ-H, 'Kozuka Gothic Pro';
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g>
+      <line class="cls-3" x1="382.42" y1="152.85" x2="382.42" y2="304.1"/>
+      <rect class="cls-4" y="52.4" width="212.05" height="128.24" rx="13.17" ry="13.17"/>
+      <text class="cls-6" transform="translate(76.02 46.47)"><tspan x="0" y="0">プログラム</tspan></text>
+      <text class="cls-6" transform="translate(82.02 207.94)"><tspan x="0" y="0">実行結果</tspan></text>
+      <text class="cls-7" transform="translate(14.51 70.53)"><tspan x="0" y="0">for( int i = 0; i &lt; 5; i++ ) {</tspan><tspan x="0" y="12" xml:space="preserve">  println(x+i);</tspan><tspan x="0" y="24">}</tspan></text>
+      <rect class="cls-4" y="216.84" width="212.05" height="116.13" rx="13.17" ry="13.17"/>
+      <rect class="cls-1" x="16.53" y="231.07" width="178.99" height="101.9"/>
+      <text class="cls-7" transform="translate(16.53 241.44)"><tspan x="0" y="0">0</tspan><tspan x="0" y="12">1</tspan><tspan x="0" y="24">2</tspan><tspan x="0" y="36">3</tspan><tspan x="0" y="48">4</tspan></text>
+      <g>
+        <rect class="cls-2" x="249.68" y=".5" width="103.27" height="36.5" rx="18.25" ry="18.25"/>
+        <text class="cls-5" transform="translate(289.31 22)"><tspan x="0" y="0">開始</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-2" x="250.73" y="315.69" width="103.27" height="36.5" rx="18.25" ry="18.25"/>
+        <text class="cls-5" transform="translate(290.37 337.19)"><tspan x="0" y="0">終了</tspan></text>
+      </g>
+      <rect class="cls-2" x="249.68" y="201.64" width="103.27" height="36.5"/>
+      <rect class="cls-2" x="249.68" y="258.64" width="103.27" height="36.5"/>
+      <text class="cls-5" transform="translate(289.48 282.02)"><tspan x="0" y="0" xml:space="preserve">i  ++</tspan></text>
+      <text class="cls-5" transform="translate(268.91 223.73)"><tspan class="cls-8" x="0" y="0">i</tspan><tspan x="5.98" y="0">を出力する</tspan></text>
+      <text class="cls-5" transform="translate(272.92 190.18)"><tspan x="0" y="0">True</tspan></text>
+      <text class="cls-5" transform="translate(355.43 147.11)"><tspan x="0" y="0">False</tspan></text>
+      <rect class="cls-2" x="249.68" y="67.55" width="103.27" height="36.5"/>
+      <text class="cls-5" transform="translate(290.65 89.04)"><tspan x="0" y="0">i = 0</tspan></text>
+      <line class="cls-3" x1="354.41" y1="152.85" x2="382.42" y2="152.85"/>
+      <g>
+        <line class="cls-2" x1="301.35" y1="252.75" x2="301.35" y2="238.14"/>
+        <polygon class="cls-4" points="305.05 249.94 301.35 251.51 297.64 249.94 301.35 258.72 305.05 249.94"/>
+      </g>
+      <g>
+        <line class="cls-2" x1="300.93" y1="195.94" x2="300.93" y2="181.33"/>
+        <polygon class="cls-4" points="304.64 193.13 300.93 194.7 297.23 193.13 300.93 201.91 304.64 193.13"/>
+      </g>
+      <g>
+        <line class="cls-2" x1="300.93" y1="309.93" x2="300.93" y2="295.32"/>
+        <polygon class="cls-4" points="304.64 307.12 300.93 308.69 297.23 307.12 300.93 315.9 304.64 307.12"/>
+      </g>
+      <g>
+        <line class="cls-2" x1="243.71" y1="152.85" x2="231.5" y2="152.85"/>
+        <polygon class="cls-4" points="240.9 149.14 242.47 152.85 240.9 156.55 249.68 152.85 240.9 149.14"/>
+      </g>
+      <g>
+        <line class="cls-2" x1="300.93" y1="118.91" x2="300.93" y2="104.05"/>
+        <polygon class="cls-4" points="304.64 116.1 300.93 117.68 297.23 116.1 300.93 124.88 304.64 116.1"/>
+      </g>
+      <g>
+        <line class="cls-2" x1="300.93" y1="61.58" x2="300.93" y2="37.74"/>
+        <polygon class="cls-4" points="304.64 58.77 300.93 60.34 297.23 58.77 300.93 67.55 304.64 58.77"/>
+      </g>
+      <line class="cls-3" x1="231.5" y1="276.9" x2="249.68" y2="276.9"/>
+      <line class="cls-3" x1="382.42" y1="304.1" x2="300.93" y2="304.1"/>
+      <line class="cls-3" x1="231.5" y1="152.85" x2="231.5" y2="276.9"/>
+      <g>
+        <text class="cls-5" transform="translate(289.65 156.23)"><tspan x="0" y="0">i &lt; 5?</tspan></text>
+        <g>
+          <polyline class="cls-2" points="301.28 180.81 354.41 152.85 301.28 124.88"/>
+          <polyline class="cls-2" points="301.35 124.88 248.22 152.85 301.35 180.81"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

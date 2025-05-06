@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processingとは？</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/processing.css">
+    <link rel="stylesheet" href="../css/processing_figure.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+  <script src="../js/processing.js" defer></script>  <!-- `defer` を追加 -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "Processingとは？";  // ← ページごとに変える！
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+
+    <div class="content">
+        <h1>Processingとは？</h1>
+        <p>
+            Processing（プロセッシング）は、ビジュアルデザインやアート、インタラクティブな作品を簡単に作れるプログラミング言語＆開発環境です
+        </p>
+        
+        <h1>主な特徴</h1>
+        <li>簡単にグラフィックを描ける（線、円、画像など）</li>
+        <li>Java（世界中で使われているとても有名なプログラミング言語の1つ）ベース（中身はJavaだけど、初心者にも使いやすいように簡略化されている）</li>
+        <li>初心者向け：プログラミングが初めてでも始めやすい</li>
+        <li>アート・教育・メディアアート分野で人気</li>
+
+        <h1>何ができる？</h1>
+        <li>2D/3Dのアニメーション (2Dのアニメーションは本サイトの「動き」で解説)</li>
+        <li>インタラクティブ作品（マウス操作・キーボード入力対応。マウス操作は本サイト「インタラクション」で解説。）</li>
+        <li>初心者向け：プログラミングが初めてでも始めやすい</li>
+        <li>アート・教育・メディアアート分野で人気</li>
+
+        <h1>Processingの基本構造</h1>
+        <p>一般的に以下の２つ<span class="highlight"><code>setup()</code></span>と<span class="highlight"><code>draw()</code></span>
+        の２つのブロックで構成されます。詳細は下部を参照してください。なお、本サイトでは以下のようなコードを実際に動かすことができます。ぜひ実行ボタンを押して見てください。</p>
+        <textarea id="code-editor" name="code-editor">
+            void setup() {
+                size(300, 300);  // ウィンドウサイズを指定。
+                // なお、"//"より後ろに書かれたものはコメントと言って、
+                // プログラムの実行に影響を与えない。
+                }
+                
+            void draw() {
+                background(255); // 背景を白に指定
+                ellipse(150, 150, 50, 50);  // 円を描く
+            }
+        </textarea>
+        <script>
+            const textarea = document.getElementById('code-editor');
+            const lines = textarea.value.split('\n');
+          
+            // 空行を除いた上で、最小インデントのスペース数を求める
+            const minIndent = Math.min(
+              ...lines
+                .filter(line => line.trim()) // 空行除外
+                .map(line => line.match(/^ */)[0].length)
+            );
+          
+            // 最小インデント分を削除して再代入
+            const trimmed = lines.map(line => line.slice(minIndent)).join('\n');
+            textarea.value = trimmed;
+        </script>
+        <br>
+        <button id="run-button">実行</button>
+        <!-- 結果表示用のコンテナ -->
+        <div id="canvas-container">
+          <!-- Processing.js では canvas 要素が必要 -->
+          <canvas id="processing-canvas"></canvas>
+        </div>
+        上述のコードは正確には２つの「関数」で構成されています。
+        関数とはある処理のまとまりをひとつの名前でまとめたものです。
+        一度作っておけば、何度でも実行（呼び出し）できます。<br>
+        <!-- エディタエリア -->
+        <span class="highlight"><code>setup()</code></span>
+        最初に1回だけ実行される関数。
+        画面サイズや初期設定を書く。
+        <br>
+        <span class="highlight"><code>draw()</code></span>
+        毎フレーム実行される関数（デフォルトで1秒60回）。
+        アニメーションや動きを書く（詳細は「動き」のページへ）。
+        <br>
+        なお、最初に記載されている<span class="highlight"><code>void</code></span>は今回はおまじないだと思って無視してください。詳細が気になる方は参考文献を参照してください。
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+          
+</body>
+
+</html>

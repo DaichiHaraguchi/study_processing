@@ -1,0 +1,104 @@
+body {
+    font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+}
+
+
+.content {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* 左揃えにする */
+    overflow: visible;
+}
+.content h2 {
+    font-size: 24px; /* h2を大きく */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.content h3 {
+    font-size: 24px; /* h3も適度に大きく */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content h2, .content h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+.content ul {
+    font-size: 18px;
+    padding-left: 150px; /* 箇条書きの開始位置を右に調整 */
+    list-style-type: disc;
+    margin-bottom: 50px;
+}
+.content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.content-columns.program-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: -40px;
+}
+.content-column.program-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.content-column.program-section h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content-column.program-section .list-left {
+    padding-left: 20px; /* インデントを適用 */
+    list-style-type: disc; /* 箇条書きのスタイル */
+    text-align: left; /* 左寄せ */
+}
+.content-column.program-section .list-left li {
+    margin-bottom: 5px; /* 各リスト項目の間隔 */
+}
+.table-container {
+    margin-top: -30px; /* 上の余白を確保 */
+    margin-bottom: 50px; /* 上の余白を確保 */
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+button {
+    background-color: #f8f8f8;  /* 背景色を薄いグレー */
+    color: black;  /* 文字色を黒 */
+    font-size: 16px;  /* フォントサイズ */
+    padding: 8px 16px;  /* 内側の余白 */
+    border: 1px solid #aaa;  /* 薄いグレーの枠線 */
+    border-radius: 5px;  /* 角を少し丸くする */
+    cursor: pointer;  /* カーソルをポインターに */
+    transition: background-color 0.2s;  /* 背景色の変化をスムーズに */
+}
+
+/* **ホバー時のスタイル（マウスを乗せたとき）** */
+button:hover {
+    background-color: #e0e0e0;  /* もう少し濃いグレーに */
+}

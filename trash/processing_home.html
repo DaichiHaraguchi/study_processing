@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processingとは？</title>
+    <link rel="stylesheet" href="../css/processing.css">
+    <link rel="stylesheet" href="../css/processing_figure.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+  <script src="../js/processing.js" defer></script>  <!-- `defer` を追加 -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "Processingとは？";  // ← ページごとに変える！
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+
+    <div class="content">
+        <h1>図の描画</h1>
+        <p>
+            ここでは、基本的な直線、円、四角形、三角形の描画について学びます。
+            実際に、コードを書きながら試してみてください。
+            一番下にコードを実際に実行できる箇所があります。
+        </p>
+        <h1>直線</h1>
+        <p>
+            直線は以下のようにして描画されます
+            <pre><code>line( 始点のx座標, 始点のy座標, 終点のx座標, 終点のy座標 );</code></pre>
+            例: <br>
+            <pre><code>line( 350, 50, 350, 450 );</code></pre>
+        </p>
+        
+        <h1>円</h1>
+        <p>
+            円は以下のようにして描画されます <br>
+            <pre><code>ellipse( 中心のx座標, 中心のy座標, 横の直径, 縦の直径 );</code></pre>
+            <br>
+            例: <br>
+            <pre><code>ellipse( 400, 400, 500, 500 );</code></pre>
+        </p>
+
+        <h1>四角形</h1>
+        <p>
+            四角形（矩形）は以下のようにして描画されます <br>
+            <pre><code>rect( 左上のx座標, 左上のy座標, 矩形の幅, 矩形の高さ );</code></pre>
+            <br>
+            例: <br>
+            <pre><code>rect( 400, 400, 500, 500 );</code></pre>
+        </p>
+
+        <h1>三角形</h1>
+        <p>
+            三角形は以下のようにして描画されます <br>
+            <pre><code>triangle(左下のx座標, 左下のy座標, 頂点のx座標, 頂点のy座標, 右下のx座標, 右下のy座標)	;</code></pre>
+            <br>
+            例: <br>
+            <pre><code>triangle( 50, 450, 250, 50, 450, 450 );</code></pre>
+        </p>
+
+        <h1>その他</h1>
+        <p>
+            ストロークの太さや塗りつぶしなどは以下のように指定できます
+            <pre><code id="auto-trim">
+                strokeWeight( 5 ); //ストローク（枠線）の太さの指定()の中の数値が太さ
+                stroke( #0000cc ); //ストロークの色の指定
+                fill( #ffcc00 ); //塗りつぶしの色の指定
+                noFill(); //塗りつぶしなし
+            </code></pre>
+            <script>
+                const el = document.getElementById('auto-trim');
+                el.textContent = el.textContent.trim().replace(/^ {2,}/gm, match => match.replace(/ /g, ''));
+              </script>
+
+        </p>
+        
+
+        <!-- 2つのコンソール -->
+        <h1>実際にコードを書いてみよう</h1>
+        <!-- エディタエリア -->
+        <textarea id="code-editor" name="code-editor">
+      void setup() {
+        size(400, 400);
+      }
+      
+      void draw() {
+        background(220);
+        ellipse(width/2, height/2, 100, 100);
+      }
+        </textarea>
+        <br>
+        <button id="run-button">実行</button>
+        <!-- 結果表示用のコンテナ -->
+        <div id="canvas-container">
+          <!-- Processing.js では canvas 要素が必要 -->
+          <canvas id="processing-canvas"></canvas>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+          
+</body>
+
+</html>

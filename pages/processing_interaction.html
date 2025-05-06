@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インタラクション</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/processing.css">
+    <link rel="stylesheet" href="../css/processing_figure.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+  <script src="../js/processing.js" defer></script>  <!-- `defer` を追加 -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "インタラクション";  // ← ページごとに変える！
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+
+    <div class="content">
+        <h1>インタラクション</h1>
+        <p>
+            ここでは、マウスを使った基本的なインタラクションについて紹介します。
+        </p>
+        <h1>マウスの座標取得</h1>
+        <p>
+            以下の変数でマウスカーソルの位置のx座標を取得できます。
+            <pre><code>mouseX</code></pre>
+            同様にこれでマウスカーソルの位置のx座標を取得できます。
+            <pre><code>mouseY</code></pre>
+        </p>
+        
+        <h1>マウスのクリック</h1>
+        <p>
+            以下の変数はマウスが押されるとTrueを返します。
+            <pre><code>mousePressed</code></pre>
+            他にどんなインタラクションがあるか調べてみよう。
+        </p>
+        
+        <!-- 2つのコンソール -->
+        <h1>実際にコードを書いてみよう</h1>
+        <p>以下のコードはマウスカーソルの位置に円を描画するコードです。このコードを改良するなどして、あなた独自のコードを書いて見ましょう。</p>
+        <!-- エディタエリア -->
+        <textarea id="code-editor" name="code-editor">
+        void setup() {
+            size(400, 400); 
+            }
+            
+        void draw() {
+            float radius = 100; // 円の半径
+            background(#dddddd);
+            fill( #ffffff );
+            ellipse( mouseX, mouseY, radius, radius);
+        }
+        </textarea>
+        <script>
+            const textarea = document.getElementById('code-editor');
+            const lines = textarea.value.split('\n');
+          
+            // 空行を除いた上で、最小インデントのスペース数を求める
+            const minIndent = Math.min(
+              ...lines
+                .filter(line => line.trim()) // 空行除外
+                .map(line => line.match(/^ */)[0].length)
+            );
+          
+            // 最小インデント分を削除して再代入
+            const trimmed = lines.map(line => line.slice(minIndent)).join('\n');
+            textarea.value = trimmed;
+          </script>
+
+        <br>
+        <button id="run-button">実行</button>
+        <!-- 結果表示用のコンテナ -->
+        <div id="canvas-container">
+          <!-- Processing.js では canvas 要素が必要 -->
+          <canvas id="processing-canvas"></canvas>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+          
+</body>
+
+</html>

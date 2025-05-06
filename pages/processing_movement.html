@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動き</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/processing.css">
+    <link rel="stylesheet" href="../css/processing_figure.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+  <script src="../js/processing.js" defer></script>  <!-- `defer` を追加 -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "動き";  // ← ページごとに変える！
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+
+    <div class="content">
+        <h1>動き</h1>
+        <p>
+            ここでは、以下のように<code>draw(){}</code>内にコードを記述していました。
+            <pre><code id="auto-trim">
+            void draw(){
+                //ここに色々書いていた
+            }
+            </code></pre>
+            <script>
+                const el = document.getElementById('auto-trim');
+                el.textContent = el.textContent.trim().replace(/^ {2,}/gm, match => match.replace(/ /g, ''));
+            </script>
+            実はこのコードは実行すると何回も繰り返されています。実は、毎フレーム実行される関数（デフォルトで1秒60回）です。 これを活用することで、図に動きをつけることができます。
+            以下の「実際にコードを書いてみよう」に記載されているコードを動かして確認してみよう。
+        </p>
+
+        <!-- 2つのコンソール -->
+        <h1>実際にコードを書いてみよう</h1>
+        <p>直線が上から落ちてくるコードです。y座標は毎描画ごとに2だけ下に動かすコードになっています。
+            特に、background(#dddddd)をすることにより前のフレームの描画をリセットしています。
+            <li>background(#dddddd)があるかないかでどのような挙動の違いがあるか確認して見ましょう。</li>
+            <li>また、他にどのような動きがつけられるかコードをいじって見ましょう。</li>
+        </p>
+        
+        <!-- エディタエリア -->
+        <textarea id="code-editor" name="code-editor">
+        float y = 0;  // 線のy座標
+
+        void setup() {
+            size(400, 400);   // ウィンドウサイズ
+            stroke(0);        // 線の色（黒）
+            strokeWeight(2);  // 線の太さ
+        }
+            
+        void draw() {
+            background(#dddddd);  // 重要：背景をグレーで塗りつぶす。これがないと直線が繋がる。
+            
+            // 画面に線を描く（xは固定、yだけ動かす）
+            line(100, y, 300, y);  // 左から右に直線を引く
+            
+            y += 2;  // y座標を少し下に移動
+            
+            // 下まで来たら上に戻す
+            if (y > height) {
+                y = 0;
+            }
+        }
+        </textarea>
+        <script>
+            const textarea = document.getElementById('code-editor');
+            const lines = textarea.value.split('\n');
+          
+            // 空行を除いた上で、最小インデントのスペース数を求める
+            const minIndent = Math.min(
+              ...lines
+                .filter(line => line.trim()) // 空行除外
+                .map(line => line.match(/^ */)[0].length)
+            );
+          
+            // 最小インデント分を削除して再代入
+            const trimmed = lines.map(line => line.slice(minIndent)).join('\n');
+            textarea.value = trimmed;
+          </script>
+
+        <br>
+        <button id="run-button">実行</button>
+        <!-- 結果表示用のコンテナ -->
+        <div id="canvas-container">
+          <!-- Processing.js では canvas 要素が必要 -->
+          <canvas id="processing-canvas"></canvas>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+          
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.header-content {
+    display: flex;
+    flex-direction: column;  /* ← ロゴを上、タイトルを下に並べる */
+    align-items: center;      /* ← 横方向を中央揃えに */
+    padding: 20px;            /* お好みで余白 */
+    position: relative;
+    z-index: 1;  /* overlayより前面に */
+    padding-top: 0px; 
+  }
+  
+.logo {
+height: 30px;             /* ロゴサイズ調整（必要に応じて） */
+margin-bottom: 30px;      /* タイトルとの間隔 */
+margin-top: 0; 
+}
+
+.header-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.3);  /* 例: 半透明の黒 */
+z-index: 0;  /* 背面に */
+}
+
+  
+.header {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: url('../fig/top.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.header-content h1 {
+    font-size: 36px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    margin-top: -25px;
+}
+.header-content p {
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    margin-top: -25px; /* 余白を増やして位置調整 */
+    display: block;
+}
+/* .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.menu-container {
+    position: relative; /* 相対配置に変更 */
+    top: calc(250px - 320px); /* ヘッダーの下にボタンを配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap; /* 画面サイズが変わっても崩れにくくする */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* ボタン間のスペース */
+    width: auto;
+    z-index: 10; /* 背景の上に表示 */
+}
+
+.menu-item {
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #333, #000);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* テキストが折り返されるのを防ぐ */
+}
+.menu-item:hover {
+    background: linear-gradient(to bottom, #444, #111);
+    color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6);
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: black;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    text-align: left;
+    border-radius: 5px;
+}
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+.dropdown a:hover {
+    background-color: #f4f4f4;
+}
+.menu-item:hover .dropdown {
+    display: block;
+}

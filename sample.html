@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for文のアニメーション</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .console {
+            background-color: black;
+            color: limegreen;
+            font-family: monospace;
+            text-align: left;
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            height: 150px;
+            overflow: auto;
+            border-radius: 5px;
+        }
+        .code-container {
+            background-color: #222;
+            color: #fff;
+            font-family: monospace;
+            text-align: left;
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+        .code-line {
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .highlight {
+            background-color: yellow;
+            color: black;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>for文のアニメーション</h1>
+    <p>実行ボタンを押すと、プログラムの動作に合わせてコードがハイライトされます。</p>
+    
+    <div class="console" id="console">
+        >>> for i in range(3):
+    </div>
+    
+    <div class="code-container">
+        <pre>
+<span class="code-line" id="line1">for i in range(3):</span>
+<span class="code-line" id="line2">    print(i)</span>
+        </pre>
+    </div>
+    
+    <button class="button" onclick="runCodeAnimation()">実行</button>
+    
+    <script>
+        async function runCodeAnimation() {
+            let steps = ["line1", "line2", "line1", "line2", "line1", "line2"];
+            let consoleOutput = document.getElementById('console');
+            let i = 0;
+            
+            for (let step of steps) {
+                document.querySelectorAll('.code-line').forEach(el => el.classList.remove('highlight'));
+                document.getElementById(step).classList.add('highlight');
+                
+                if (step === "line2") {
+                    consoleOutput.innerHTML += `<br>>> ${i}`;
+                    i++;
+                }
+                
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+    </script>
+</body>
+</html>

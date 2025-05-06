@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+    <link rel="stylesheet" href="../css/if.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はじめてのプログラミング</title>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "はじめに";  // ← ページごとに変える！
+
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+    <div class="menu">
+        <div class="menu-item">
+            プログラミングの基礎
+            <div class="dropdown">
+                <a href="program_home.html">Home</a>
+                <a href="#">変数</a>
+                <a href="#">条件分岐</a>
+                <a href="#">ループ</a>
+            </div>
+        </div>
+        <div class="menu-item">Processing の基礎</div>
+    </div>
+    <div class="content">
+        <p><strong>本サイトの目的</strong></p>
+        <p></p>
+        <p><strong>本サイトの利用方法</strong></p>
+        <p></p>
+    </div>
+    
+</body>
+</html>

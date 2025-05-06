@@ -1,0 +1,42 @@
+pre {
+    margin-top: 0px; /* Adjust the value to increase/decrease the spacing */
+    padding: 10px;
+    background-color: #f5f5f5; /* Light gray background for better readability */
+    border-radius: 5px;
+    text-align: left;
+    white-space: pre;
+    line-height: 1.5; 
+  }
+  /* If you need different spacing for the first and second code blocks */
+  pre:first-of-type {
+    margin-top: -40px;
+  }
+
+  pre:nth-of-type(2) {
+    margin-top: 0px; /* Increase space for the second code block */
+  }
+
+  pre:nth-of-type(3) {
+    margin-top: -40px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(4) {
+    margin-top: 0px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(5) {
+    margin-top: -40px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(6) {
+    margin-top: 0px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(7) {
+    margin-top: -40px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(8) {
+    margin-top: 0px; /* Increase space for the second code block */
+  }
+  pre:nth-of-type(9) {
+    margin-top: -40px; /* Increase space for the second code block */
+    padding-left: 10;   
+  }
+  
+  

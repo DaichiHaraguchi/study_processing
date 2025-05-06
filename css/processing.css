@@ -1,0 +1,15 @@
+
+.CodeMirror {
+    height: 500px;
+    border: 1px solid #ddd;
+}
+#canvas-container {
+    margin-top: 20px;
+}
+/* canvas のサイズはユーザーコード内の size() に依存しますが、枠として表示 */
+#processing-canvas {
+    border: 1px solid #ddd;
+}
+.highlight {
+    background-color: #ddd;
+}

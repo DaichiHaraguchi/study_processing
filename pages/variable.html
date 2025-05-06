@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>変数</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "変数";  // ← ページごとに変える！
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+        
+    <div class="content">
+        <h1>変数とは？</h1>
+        <p>
+            変数とはプログラムで使用する文字列や数値などを一時的に保存するための場所です。
+            箱のようなものと考えるとわかりやすいです。例えば、変数<code>x</code>に<code>5</code>を入れる（「代入」と呼ぶ）
+            とき、プログラミングでは <code>x=5</code> のように記述します。
+            <code>x</code>という箱に<code>5</code>が入れられるイメージです（下図のイメージ）。
+            <img src="../fig/variable_eg.svg" alt="variable" style="width: 20%; max-width: 600px; border-radius: 10px;">
+        </p>
+        <h1>型とは？</h1>
+        <p>
+            変数には型というものがあります。変数（箱）に入れられるものの種類をあらかじめ設定するためのものです。変数の前に型を記述します。
+            以下に代表的な型を示します。
+        </p>
+    
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    <th>型</th>
+                    <th>役割</th>
+                    <th>使用例</th>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>整数を保存するときに使用。</td>
+                    <td><code>int x = 5</code></td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>小数値を保存するときに使用。</td>
+                    <td><code>float x = 1.5</code></td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>真偽値(true or false)を保存するときに使用。</td>
+                    <td><code>boolean x = true</code></td>
+                </tr>
+                <tr>
+                    <td>String</td>
+                    <td>文字列を保存するときに使用。</td>
+                    <td><code>String x = "Hello"</code></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h1>視覚的に見てみよう</h1>
+        <p>
+            実行ボタンを押すと、コードの動作と図解アニメーションを確認できます。
+            なお、ここでは<code>println(x)</code>というものが使われています。
+            これは変数の中身を出力（確認）するためのものです。
+        </p>
+        <!-- 2つのコンソール -->
+        <div class="console-container">
+            <!-- プログラムコンソール -->
+            <div class="console-box">
+                <div class="console-title">プログラム</div>
+                <div class="console" id="programConsole">
+                    <div id="code1"> int x = 5;</div>
+                    <div id="code2"> println(x);</div>
+                    <div id="code3"> int x = 10;</div>
+                    <div id="code4"> println(x);</div>
+                </div>
+            </div>
+    
+            <!-- 出力コンソール -->
+            <div class="console-box">
+                <div class="console-title">結果の出力</div>
+                <div class="console" id="outputConsole">
+                    <br>
+                </div>
+            </div>
+        </div>
+    
+        <button class="button" onclick="startAnimation()">実行</button>
+    
+        <div class="animation-container">
+            <p><b>アニメーション</b></p>
+            <img src="../fig/hako.svg" alt="変数の箱" width="180">
+            <div class="variable-value" id="variableValue">5</div>
+            <div class="new-variable-value" id="newvariableValue">10</div>
+        </div>
+        <script src="../js/variable.js" defer></script>  <!-- `defer` を追加 -->
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

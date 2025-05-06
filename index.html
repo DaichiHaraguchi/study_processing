@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はじめてのプログラミング</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <!-- <div class="header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>はじめてのプログラミング</h1>
+            <p>~ Processing に触れてみよう ~</p>
+        </div>
+    </div> -->
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "はじめてのプログラミング";  // ← ページごとに変える！
+        const pageSubTitle = "~ Processing に触れてみよう ~"
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+                document.getElementById('page-subtitle').textContent = pageSubTitle;
+            });
+    </script>
+
+    <div class="content">
+        <h2>本サイトの目的</h2>
+        <p>
+            本サイトはムサビ通信生向けのプログラミング学習サイトである。
+            デザイン基礎IIAの程度の課題をスムーズに進められるようになることを目的とし、
+            プログラミング言語のProcessingを用いてプログラミングの学習をする。
+            <!-- 特に、基本的な概念（変数、ループ、条件分岐など）を
+            プログラミングの基礎として、図の描画やインタラクションなどを
+            Processingの基礎として学習を進める。 -->
+        </p>
+        <img src="./fig/purpose.svg" alt="目的" style="width: 100%; max-width: 600px; border-radius: 10px;">
+        <h2>こんな人が対象</h2>
+        <img src="./fig/person.svg" alt="対象" style="width: 100%; max-width: 600px; border-radius: 10px;">
+        <!-- <ul>
+            <li>プログラミングをやったことがない</li>
+            <li>Processingを使うのが初めて</li>
+            <li>プログラミング経験者だが不安がある</li>
+        </ul> -->
+        <div id="usage-section">
+            <h2>本サイトの構成・利用方法</h2>
+            <p>
+                本サイトは「プログラミングの基礎」と「Processingの基礎」で構成される。自分のレベルにあった方から学習を進めていただきたい。
+            </P>
+            </p>
+            <div class="content-columns program-section">
+                <div class="content-column program-section">
+                    <h3>プログラミングの基礎</h3>
+                    <p>変数・条件分岐・ループなど、基本的な概念を視覚的に学ぶ。<br>
+                        対象：プログラミング初学者、プログラミングに不安のある方
+                    </p>
+                    <ul class="list-left">
+                        目次
+                        <!-- <li><a href="./pages/program_home.html">はじめに</a></li> -->
+                        <li><a href="./pages/variable.html">変数</a></li>
+                        <li><a href="./pages/program_home.html">条件分岐</a></li>
+                        <li><a href="#">ループ</a></li>
+                    </ul>
+                    <img src="./fig/program_basic.svg" alt="program_basic" style="width: 50%; max-width: 600px; border-radius: 10px;">
+                </div>
+                <div class="content-column program-section">
+                    <h3>Processing の基礎</h3>
+                    <p>図の描画やインタラクションなどをコードを書きながら学ぶ。<br>
+                        対象：Processing初学者、プログラミングに不安のある方<br>
+                    </p>
+                    <ul class="list-left">
+                        目次
+                        <!-- <li><a href="./pages/program_home.html">はじめに</a></li> -->
+                        <li><a href="./pages/variable.html">Processingとは？</a></li>
+                        <li><a href="./pages/variable.html">図の描画</a></li>
+                        <li><a href="./pages/program_home.html">インタラクション</a></li>
+                        <li><a href="./pages/program_home.html">動き</a></li>
+                        <!-- <li><a href="#">ループ</a></li> -->
+                    </ul>
+                    <img src="./fig/processing_basic.svg" alt="processing_basic" style="width: 100%; max-width: 600px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+        <div id="参考文献">
+            <h2>参考文献</h2>
+            <div class="reference">
+                <ul class="list-left">
+                    <!-- <li><a href="./pages/program_home.html">はじめに</a></li> -->
+                    <li><a href="https://cc.musabi.ac.jp/kenkyu/cf/renew/program/processing/processing01.html">コンピュータ基礎II プログラムでヴィジュアルを作ろう (webページ)</a></li>
+                    <li><a href="http://www.musashinodenpa.com/p5/index.php">Processingクイックリファレンス (webページ)</a></li>
+                    <li><a href="https://www.oreilly.co.jp/books/9784873117737/">Processingをはじめよう 第2版 (書籍)</a></li>
+                </ul>    
+            </div>
+        </div>
+        <div id="注意">
+            <h2>注意</h2>
+            <p>本サイトは、武蔵野美術大学通信教育課程の課題として作成されたものです。内容には一部不正確な情報が含まれている可能性がありますので、あらかじめご了承ください。</p>   
+        </div>
+    
+    </div>
+</div>
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

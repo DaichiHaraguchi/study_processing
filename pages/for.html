@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ループ</title>
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../fig/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/for.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        const pageTitle = "ループ";  // ← ページごとに変える！
+
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('page-title').textContent = pageTitle;
+            });
+    </script>
+    <div class="content">
+        <h1>ループ</h1>
+        <p>
+            forを用いて、ループ、つまり、繰り返しプログラムを実行することができます。
+            以下のような書き方をします。
+        </p>
+            <pre><code>
+                for( 変数の初期値; 繰返しを続ける条件; 変数の増分 ) {
+                    繰返したい処理;
+                
+                }
+                
+            </code></pre>
+        <p>
+            下図にプログラムとフローチャートを示しています。下図は<code>i</code>が<code>5</code>より小さい限り<code>i</code>中身を繰り返し出力するコードです。
+            実際にどのようにfor文が動いているのかは「視覚的に見てみよう」を確認してください。
+            <img src="../fig/for_eg.svg" alt="if" style="width: 70%; max-width: 600px; border-radius: 10px;">
+        </p>
+        
+        <h1>視覚的に見てみよう</h1>
+        <p>
+            実行ボタンを押すと、コードの動作と図解アニメーションを確認できます。
+        </p>
+        <!-- 2つのコンソール -->
+        <div class="console-container">
+            <!-- プログラムコンソール -->
+            <div class="console-box">
+                <div class="console-title">プログラム</div>
+                <div class="console" id="programConsole">
+                    <div id="for-statement">
+                        <span class="keyword">for </span>(int i = 0; i < 5; i++) {<br>
+                    </div>
+                        <div id="print"> &nbsp;&nbsp;println(i);<br></div>
+                        }
+                </div>
+            </div>
+    
+            <!-- 出力コンソール -->
+            <div class="console-box">
+                <div class="console-title">結果の出力</div>
+                <div class="console" id="outputConsole">
+                    <br>
+                </div>
+            </div>
+        </div>
+    
+        <button class="button" onclick="startAnimation()">実行</button>
+        <!-- <button class="button" onclick="startAnimation()">実行</button> -->
+
+        <script src="../js/for.js" defer></script>  <!-- `defer` を追加 -->
+        <div class="animation-container">
+            <p><b>アニメーション</b></p>
+            <img id="image" src="../fig/for/0.svg" alt="画像"  style="height: 90%; max-height: 900px;">
+        </div>
+        
+        
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        // フッター用
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
